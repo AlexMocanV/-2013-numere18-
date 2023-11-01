@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+ifstream fin("numere18.in");
+ofstream fout("numere18.out");
+
+int main()
+{
+    long long int c,s=0,n,i,j,nr=1,y,z=0;
+    fin>>c;
+    if(c==1)
+    {
+        fin>>n;
+        z=n*(n+1)/2;
+        while(n>0)
+        {
+            s+=z;
+            z--;
+            n--;
+        }
+        fout<<s;
+    }
+    else
+    {
+        fin>>n;
+        int r=1;
+        while(r*(r+1)/2<n)
+        {
+            r++;
+        }
+        fout<<r<<" ";
+        z=r*(r+1)/2;
+        while(z!=n)
+        {
+            z--;
+            r--;
+        }
+        fout<<r;
+    }
+    return 0;
+}
